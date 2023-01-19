@@ -2,76 +2,53 @@ package blinddate;
 
 public class Member {
 	
-	private String name = "";
-	private int age = 20;
-	private int gender = -1;
-	private String residence = "";
-	private String contact = "";
-	private String introduction = "";
-	private int blindDateNumber = 0;
+	String name = "";
+	String birthDay = "";
+	int gender = 0;
+	String residence = "";
+	String contact = "";
+	String introduction = "";
+	int blindDateNumber = 0;
 	
-	public Member(String name, int age, int gender, String residence) {
+	private String ID = "";
+	private String PW = "";
+	
+	public Member(String name, String birthDay, int gender, String residence, String ID, String PW) {
 		super();
 		this.name = name;
-		this.age = age;
+		this.birthDay = birthDay;
 		this.gender = gender;
 		this.residence = residence;
+		this.ID = ID;
+		this.PW = PW;
 	}
 
-	public String getName() {
-		return name;
+	public String getID() {
+		return ID;
+	}
+	public String getPW() {
+		return PW;
+	}
+	public void setID(String iD) {
+		ID = iD;
+	}
+	public void setPW(String pW) {
+		PW = pW;
 	}
 
-	public int getAge() {
-		return age;
-	}
-
-	public int getGender() {
-		return gender;
-	}
-
-	public String getResidence() {
-		return residence;
-	}
-
-	public String getContact() {
-		return contact;
-	}
-
-	public String getIntroduction() {
-		return introduction;
-	}
-
-	public int getBlindDateNumber() {
-		return blindDateNumber;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public void setGender(int gender) {
-		this.gender = gender;
-	}
-
-	public void setResidence(String residence) {
-		this.residence = residence;
-	}
-
-	public void setContact(String contact) {
-		this.contact = contact;
-	}
-
-	public void setIntroduction(String introduction) {
-		this.introduction = introduction;
-	}
-
-	public void setBlindDateNumber(int blindDateNumber) {
-		this.blindDateNumber = blindDateNumber;
+	@Override
+	public String toString() {
+		String str = "이름 : "+name+"\n";
+		str += "생년월일 : "+birthDay+"\n";
+		if (gender == 1) str += "성별 : 남\n";
+		else str += "성별 : 여\n";
+		str += "거주지 : "+residence+"\n";
+		str += "연락쳐 : "+contact+"\n";
+		str += "자기소개 : "+introduction+"\n";
+		str += "소개팅 횟수 : "+Integer.toString(blindDateNumber)+"\n";
+		str += "ID : "+ID+"\n";
+		str += "PW : "+PW+"\n";
+		return str;
 	}
 	
 }
